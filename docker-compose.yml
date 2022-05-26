@@ -1,0 +1,24 @@
+version: "3"
+services:
+  dd:
+    image: entmike/disco-diffusion-1
+    command: 
+      # - "ls -a"
+      - "/bin/bash"
+      # - "python disco.py --config_file=/workspace/disco-diffusion/configs/doit.yml"
+      # - ls -a
+      # - /disco-diffusion-1/configs
+    volumes:
+      - ./data/images_out:/workspace/code/images_out
+      - ./data/init_images:/workspace/code/init_images
+      - ./data/models:/workspace/disco-diffusion-1/models
+      - ./data/configs:/workspace/disco-diffusion/configs
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

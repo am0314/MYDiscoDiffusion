@@ -1,0 +1,20 @@
+RN101: true
+RN50: true
+RN50x16: true
+RN50x4: true
+RN50x64: true
+ViTB16: true
+ViTB32: true
+ViTL14: true
+ViTL14_336: true
+
+batch_name: slmpan
+n_batches: 3
+steps: 250
+
+text_prompts:
+  '0':
+  - "a big tree in the abyss"
+width_height:
+- 1280
+- 1280
